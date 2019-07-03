@@ -1,6 +1,10 @@
 package com.demo.util;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -28,5 +32,16 @@ public class Base {
 			e.printStackTrace(); 
 		}
 	}
+	
+	protected void finished(String actualTestMethod,String status,String actualTestClass) {
+        try {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("target/teststream.txt", true)));
+            out.println("{\"metodo\":\""+actualTestMethod+"\", \"status\":\""+status+"\", "
+       + "\"classe\":\""+actualTestClass+"\", \"descricao\":\""+actualTestMethod+"\"}");
+            out.close();
+        } catch (IOException e) {
+         e.printStackTrace();
+        }
+    } 
 
 }

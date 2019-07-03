@@ -7,6 +7,7 @@ import org.testng.ITestResult;
 import com.demo.util.Base;
 
 public class ExtendedITestListener extends Base implements ITestListener{
+	String status, className;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -17,12 +18,15 @@ public class ExtendedITestListener extends Base implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		System.out.println(result.getName()+" Test Case Is Passed");
-		
+		status = "PASS";
+		className = result.getTestClass().getName();
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println(result.getName()+" Test Case Is Failed");
+		status = "FAIL";
+		className = result.getTestClass().getName();
 		failed(result.getMethod().getMethodName().toString().trim());
 		
 	}
@@ -47,8 +51,7 @@ public class ExtendedITestListener extends Base implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-		
+		finished(context.getName().trim(), status, className);
 	}
 
 }

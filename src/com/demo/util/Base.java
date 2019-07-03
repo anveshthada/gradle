@@ -26,7 +26,6 @@ public class Base {
 	public void failed(String testCaseName) {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			System.out.println(System.getProperty("user.dir")+"/target/screenshots/"+testCaseName+".png");
 			FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir")+"\\target\\screenshots\\"+testCaseName+".png"));
 		}catch (Exception e) {
 			e.printStackTrace(); 

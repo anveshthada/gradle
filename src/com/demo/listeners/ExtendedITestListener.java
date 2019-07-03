@@ -4,11 +4,13 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class ExtendedITestListener implements ITestListener{
+import com.demo.util.Base;
+
+public class ExtendedITestListener extends Base implements ITestListener{
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
+		System.out.println("Test Started");
 		
 	}
 
@@ -21,6 +23,7 @@ public class ExtendedITestListener implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println(result.getName()+" Test Case Is Failed");
+		failed(result.getMethod().getMethodName().toString().trim());
 		
 	}
 

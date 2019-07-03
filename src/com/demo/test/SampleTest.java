@@ -1,19 +1,26 @@
 package com.demo.test;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SampleTest {
+import com.demo.util.Base;
+
+public class SampleTest extends Base {
 	
-	@Test
-	public void m1() {
-		System.out.println("M1");
-		Assert.assertTrue(true);
+	@BeforeMethod
+	public void beforeMethod() {
+		initialization();
+	}
+	
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
 	}
 	
 	@Test
-	public void m2() {
-		System.out.println("M2");
-		Assert.assertTrue(true);
+	public void basicTest() {
+		Assert.assertTrue(false);
 	}
 }

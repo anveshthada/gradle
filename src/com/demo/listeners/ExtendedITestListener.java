@@ -7,7 +7,7 @@ import org.testng.ITestResult;
 import com.demo.util.Base;
 
 public class ExtendedITestListener extends Base implements ITestListener{
-	String testName, status, className;
+	public static String testName, status, className;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -51,7 +51,7 @@ public class ExtendedITestListener extends Base implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
-		finished(testName, status, className);
+		
 	}
 
 }

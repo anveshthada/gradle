@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +21,12 @@ public class Base {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.google.co.in/");
-		driver.findElement(By.name("q")).sendKeys("hello");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void failed(String testCaseName) {

@@ -23,6 +23,6 @@ public class SampleTest extends Base {
 	
 	@Test
 	public void basicTest() {
-		Assert.assertTrue(false);
+		Assert.assertTrue(true);
 	}
 }

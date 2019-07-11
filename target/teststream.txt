@@ -5,3 +5,4 @@
 {"metodo":"basicTest", "status":"FAIL", "classe":"com.demo.test.SampleTest", "descricao":"basicTest"}
 {"metodo":"basicTest", "status":"PASS", "classe":"com.demo.test.SampleTest", "descricao":"basicTest"}
 {"metodo":"basicTest", "status":"FAIL", "classe":"com.demo.test.SampleTest", "descricao":"basicTest"}
+{"metodo":"basicTest", "status":"FAIL", "classe":"com.demo.test.SampleTest", "descricao":"basicTest"}
